@@ -7,8 +7,10 @@ function cleanup {
   echo "Removing build directory ${BUILDENV}"
   rm -rf ${BUILDENV}
 }
- 
+
 trap cleanup EXIT
+
+echo "extension = xdebug.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
  
 if [ ! -z $TRAVIS_BUILD_DIR ] ; then
   WORKSPACE=$TRAVIS_BUILD_DIR
