@@ -56,4 +56,5 @@ tools/modman deploy-all --force
 tools/n98-magerun.phar --root-dir=htdocs config:set dev/template/allow_symlink 1
 
 echo "Exporting test results to code climate"
+cat build/logs/clover.xml
 vendor/codeclimate/php-test-reporter/composer/bin/test-reporter
