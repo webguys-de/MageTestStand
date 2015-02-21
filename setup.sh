@@ -10,8 +10,8 @@ function cleanup {
 
 trap cleanup EXIT
 
-echo "extension = xdebug.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
- 
+echo "zend_extenstion = xdebug.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+
 if [ ! -z $TRAVIS_BUILD_DIR ] ; then
   WORKSPACE=$TRAVIS_BUILD_DIR
 fi
