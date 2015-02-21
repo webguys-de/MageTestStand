@@ -24,6 +24,9 @@ echo "    Pass: [hidden]"
 echo "    Name: ${MAGENTO_DB_NAME}"
 echo
 
+pwd
+tree -L 1
+
 cd ${SOURCE_DIR}
 
 if [ ! -f htdocs/app/etc/local.xml ] ; then
@@ -54,6 +57,9 @@ fi
 tools/modman deploy-all --force
 
 tools/n98-magerun.phar --root-dir=htdocs config:set dev/template/allow_symlink 1
+
+pwd
+tree -L 1
 
 echo "Exporting test results to code climate"
 vendor/bin/test-reporter
