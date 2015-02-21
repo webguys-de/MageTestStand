@@ -48,9 +48,12 @@ if [ ! -f htdocs/app/etc/local.xml ] ; then
 fi
 
 if [ ! -f composer.lock ] ; then
-    tools/composer.phar install --dev
+    tools/composer.phar install
 fi
 
 tools/modman deploy-all --force
 
 tools/n98-magerun.phar --root-dir=htdocs config:set dev/template/allow_symlink 1
+
+echo "Exporting test results to code climate"
+vendor/bin/test-reporter
