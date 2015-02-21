@@ -25,7 +25,7 @@ echo "    Name: ${MAGENTO_DB_NAME}"
 echo
 
 pwd
-tree -L 1
+ls -l
 
 cd ${SOURCE_DIR}
 
@@ -59,7 +59,7 @@ tools/modman deploy-all --force
 tools/n98-magerun.phar --root-dir=htdocs config:set dev/template/allow_symlink 1
 
 pwd
-tree -L 1
+ls -l
 
 echo "Exporting test results to code climate"
 vendor/bin/test-reporter
