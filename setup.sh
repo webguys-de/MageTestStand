@@ -30,5 +30,5 @@ cp -rf ${WORKSPACE} ${BUILDENV}/.modman/
 ${BUILDENV}/install.sh
  
 cd ${BUILDENV}/htdocs
-${BUILDENV}/bin/phpunit --coverage-clover build/logs/clover.xml --colors -d display_errors=1
+${BUILDENV}/bin/phpunit --coverage-clover ${BUILDENV}/build/logs/clover.xml --colors -d display_errors=1
 
