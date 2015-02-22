@@ -30,6 +30,7 @@ cp -rf ${WORKSPACE} ${BUILDENV}/.modman/
 ${BUILDENV}/install.sh
  
 cd ${BUILDENV}/htdocs
+cp ${WORKSPACE}/phpunit.xml.dist .
 ${BUILDENV}/bin/phpunit --coverage-clover ${BUILDENV}/build/logs/clover.xml --colors -d display_errors=1
 
 echo "Exporting test results to code climate"
